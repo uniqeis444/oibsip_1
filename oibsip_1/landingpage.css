@@ -1,0 +1,120 @@
+*{
+    color: azure;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section{
+    min-height: 100vh;
+    background:url("https://i.ytimg.com/vi/smRoer3G-zs/maxresdefault.jpg"); 
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    animation: slide 1s ease-in-out;
+}
+
+:root{
+    --text:1.5rem;
+    --head:calc(1rem+5vw);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+   align-items: center;
+   padding: 0rem 1rem ;
+   color: azure;
+   transform: translateY(-100%);
+
+   animation: movedownnav 850ms ease-in 1s forwards;
+}
+
+@keyframes movedownnav{
+    from{
+        transform: translateY(-100%);
+
+    }to{
+        transform: translateY(0%);
+
+    }
+
+} 
+.navbar ul{
+    list-style: none;
+}
+.navbar ul li{
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: var(--text);
+}
+
+.navbar ul li a{
+    text-decoration:none ;
+    color:white;
+    border-bottom: 2px solid transparent;
+}
+.navbar ul li a:hover{
+    border-bottom: 2px solid white;
+}
+/*seudo element 
+*/
+.hero-text::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:black;
+    z-index:-1;
+    top: 0;
+    opacity: 0.6;
+
+
+}
+.hero-text{
+    color:white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+@keyframes slide{
+    from{
+        transform: translateX(-100%);
+
+    }to{
+        transform: translateX(0%);
+
+    }
+}
+
+.hero-text a {
+    color:white;
+    background:rgb(111, 183, 205) ;
+    font-weight: 900;
+    padding: 0.8rem 1rem;
+    margin: 0.8rem auto;
+    display: block;
+    transition:opacity 250ms linear;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.hero-text a:hover{
+opacity: 0.4;
+
+}
+.hero-text h2{
+    font-size: var(--head);
+}
+.hero-text p{
+    font-size: 3rem;
+}
